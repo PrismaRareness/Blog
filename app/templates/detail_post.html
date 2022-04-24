@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3>{{ postage.title }}</h3>
+                    <p><i class="bi bi-calendar"></i> <i>{{ postage.time_creation }}</i></p>
+                    <p><i class="bi bi-person-fill"></i> <b>Author:</b> {{ postage.author.username }}</p>
+
+                    {% if postage.time_publication %}
+                        <p><b>Data publicação:</b> {{ postage.time_publication }}</p>
+                    {% endif %}
+                    <hr>
+                    <p class="card-text">{{ postage.text|safe }}</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+</div>
+
+
+{% endblock %}
